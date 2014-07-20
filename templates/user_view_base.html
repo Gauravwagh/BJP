@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/media/img/ico/bjp.jpg">
+
+    <title>BJP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/media/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/media/css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="/media/css/font-awesome.min.css">
+
+    <script src="/media/js/jquery.min.js"></script>
+	<script src="/media/js/modernizr.custom.js"></script>		
+  
+
+   
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/media/js/html5shiv.js"></script>
+      <script src="/media/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+{% block message %}
+	   {% include "includes/messages.html"%}
+{% endblock %}
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+  {% block main %}
+  
+	
+  
+  {% endblock %}
+  
+      <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="/media/js/classie.js"></script>
+    <script src="/media/js/bootstrap.min.js"></script>
+    <script src="/media/js/smoothscroll.js"></script>
+	<script src="/media/js/main.js"></script>
+{% block js %}
+
+{% endblock %}
+</body>
+</html>

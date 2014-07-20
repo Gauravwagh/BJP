@@ -1,0 +1,267 @@
+{% extends "user_view_base.html" %}
+{% block main %}	
+<style>
+.manifesto, .team, .contact{
+	width:24%;
+	display:inline-block;
+	vertical-align:top;
+	}
+.contact{
+	width:33%;
+}
+</style>
+	<!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="http://bjpkarnataka.org/">BJP</a></h1>
+			<i class="icon-remove menu-close"></i>
+			<a href="#home" class="smoothScroll">Home</a>
+			<a href="#manifesto" class="smoothScroll">Manifesto</a>	
+			<a href="#services" class="smoothScroll">Previous Manifesto</a>				
+			<a href="#about" class="smoothScroll">About</a>
+			<a href="#contact" class="smoothScroll">Contact</a>
+			<a href="https://www.facebook.com/bjpinkarnataka" target="_blank"><i class="icon-facebook"></i></a>
+			<a href="https://twitter.com/bjpkarnataka"  target="_blank"><i class="icon-twitter"></i></a>
+			
+			<a href="#"><i class="icon-envelope"></i></a>
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+
+
+	
+	<!-- ========== HEADER SECTION ========== -->
+	<section id="home" name="home"></section>
+	<div id="headerwrap" >
+	
+		<div class="container">
+		
+			<h2 align="left" >NaMo</h2>
+			<h3 align="left" >YOUR VOICE OUR MANIFESTO</h3>
+			<img src="/media/img/7.gif" alt="Smiley face" align="middle" style="left:60%; top:1%; position:absolute;">
+		
+		
+			<form action="" method="POST" id="manifesto" class="fancy-form form-horizontal" role="form" style="background-color:#ff9934; width:724px">{% csrf_token %}
+					<div > 
+						<label > Suggestion For India: <input type="radio" name="consti" id="country" check> Suggestion For Constituency: <input type="radio" name="consti" id="constituency"></label>
+						<br>
+					</div> 
+					
+					{% for form in answerform %}
+						
+						<div class="field_parent">
+						{{ form.label_tag }}{% if form.field.required %} <div class="required-field">* Required</div>{% endif %}{{ form }}{{ form.errors }} <br />	<br />				
+						</div>
+					{% endfor %}
+					
+					{% for form in userform %}
+						{{ form.label_tag }}{% if form.field.required %} <div class="required-field">* Required</div>{% endif %} {{ form }}	{{ form.errors }}<br />	<br />	
+					{% endfor %}
+					
+					
+				<input type="submit" class="btn btn-success btn-lg btn-block" value="Your suggestions will change INDIA [SUBMIT]" />
+			</form>
+		<!-- ============================================================================== New form========================================-->
+			
+			<!-- =============================================== End new form======================================================== -->
+			<div class="row">
+				<br>
+				<br>
+				<br>
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+	
+	
+	<!-- ========== WHITE SECTION ========== -->
+	
+	<!-- ========== SERVICES - GREY SECTION ========== -->
+	<section id="services" name="services"></section>
+	<div id="g">
+		<div class="container">
+			<div class="row">
+				<h3>Our Manifesto</h3>
+				<br>
+				<br>
+				<div class="col-lg-3 manifesto">
+					<img src="/media/img/women.jpg">
+					<h4>Women Empowerment</h4>
+					<p>. BJP remains committed to bring about 33 percent reservation for women in legislatures and will endeavour to 
+introduce it at the earliest.</p>
+				</div>
+				<div class="col-lg-3 manifesto">
+					<img src="/media/img/terror.jpg">
+					<h4>Stop Terrorism</h4>
+					<p>We will systematically detect, detain and deport illegal immigrants who have emerged as a major source of 
+homegrown terror. Fencing of the India-Bangladesh border, deliberately neglected by the UPA in pursuit of 
+vote bank politics, will be speedily completed. 
+</p>
+				</div>
+				<div class="col-lg-3 manifesto">
+					<img src="/media/img/farmers.jpg">
+					<h4>Economic Growth</h4>
+					<p>Generate employment through massive public spending on infrastructure projects. Complete the implementation 
+of Shri Atal Bihari Vajpayee's dream projects: National Highway Development Project by building 15-20 km 
+of new highways every day; and Pradhan Mantri Gram Sadak Yojana, to link all villages with over 500 people 
+by all-weather road.</p>
+				</div>
+				<div class="col-lg-3 manifesto">
+					<img src="/media/img/energy.jpg">
+					<h4>Conserve Energy</h4>
+					<p>Generate an additional 120,000 MW of electricity in 5 years through speedy conclusion of ongoing projects 
+while sanctioning new power plants. 20% of this will be through harnessing non-conventional energy sources. 
+</p>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /g -->
+
+	<!-- ========== WHITE SECTION ========== -->
+	<div id="w">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+				<h2>Your ideas for BJP Manifesto</h2>
+				<h3><bold>WE WILL WORK HARD TO DELIVER WHAT YOU EXPECT FROM US</bold>.
+				</h3>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /w -->
+	
+	<!-- ========== ABOUT - GREY SECTION ========== -->
+	<section id="about" name="about"></section>
+	<div id="g">
+		<div class="container">
+			<div class="row">
+				<h3>ABOUT BJP</h3>
+				<br>
+				<br>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-8">
+				<p>The Bharatiya Janata Party is today the most prominent member of the family of organisations known as the "Sangh Parivar" and nurtured by the Rashtria Swyamsevak Sangh (RSS). Like the RSS, the BJP is wedded to India's unity and integrity, its intrinsic identity and the social strength, individual character and cultural uniqueness that have been the hallmark of this great country and its people for millennia.
+
+History is the philosophy of nations. And the Sangh Parivar has a very clear and clear conception of Indian history. Here was a great civilization whose influence and imprint spread from Sri Lanka to Tibet, from Southeast Asia to Central Asia, from one end of the Indian Ocean to the other. It weathered the storms of invaders, from the Greeks to the Huns, from the Shakas to the Islamic armies of Turks and Afghans. It fought and resisted external oppression and its essential civilization and culture survived great challenges and attempts at effacement. The glory of Vijayanagara and the heroism of Maharana Pratap, of a Shivaji and of a Guru Govind Singh are testimony to the Indian spirit.</p>
+				<br>
+				<br>
+				</div>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-3 team">
+					<img class="img-circle" src="/media/img/modi.jpg" >
+					<h4>Narendra Modi</h4>
+					<h5><i>PM Candidate</i></h5>
+					<p>Visionary a Leader<br>Chief Minister of Gujarat<br>From(7 October 2001-Till Date)</p>
+					
+					<p>
+						<a href="https://www.facebook.com/narendramodi" target="_blank"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/narendramodi" target="_blank"><i class="icon-twitter"></i></a>
+						
+
+					</p>
+				</div>
+
+				<div class="col-lg-3 team">
+					<img class="img-circle" src="/media/img/rajnath.jpg" >
+					<h4>Rajnath Singh</h4>
+					<h5><i>Party President</i></h5>
+					<p>Leader<br>In April 1994, he was elected into the Rajya Sabha <br>(Upper House of the Indian Parliament) and he became involved with<br> the Advisory committee on Industry (1994-96)</p>
+					<p>
+						<a href="https://www.facebook.com/RajnathSinghBJP" target="_blank"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/BJPRajnathSingh" target="_blank"><i class="icon-twitter"></i></a>
+						
+					</p>
+				</div>
+
+				<div class="col-lg-3 team">
+					<img class="img-circle" src="/media/img/sushma.jpg" >
+					<h4>Sushma Swaraj</h4>
+					<h5><i>Leader of Opposition</i></h5>
+					<p>Sushma Swaraj is a six-term Member of Parliament, and three times MLA {1977-82 & 1987-90 and 1998 }and currently Leader of Opposition in the 15th Lok Sabha</p>
+					<p>
+						<a href="https://www.facebook.com/pages/Sushma-swaraj/149763735083061" target="_blank"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/SushmaSwarajbjp" target="_blank"><i class="icon-twitter"></i></a>
+						
+
+					</p>
+				</div>
+
+				<div class="col-lg-3 team">
+					<img class="img-circle" src="/media/img/atal.jpg">
+					<h4>Atal Bihari Bajpayee</h4>
+					<h5><i>Former party President and Prime Minister</i></h5>
+					<p>Visionary and Leader beyond Compare</p>
+					<p>
+						<a href="https://www.facebook.com/pages/Atal-Bihari-Vajpayee/17352079247" target="_blank"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/AtalBajpeyi" target="_blank"><i class="icon-twitter"></i></a>
+						
+
+					</p>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /g -->
+	
+	<!-- ========== FOOTER SECTION ========== -->
+	<section id="contact" name="contact"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+					<h3><b>CONTACT US</b></h3>
+					<br>
+					<div class="col-lg-4 contact">
+						<h3><b>Send Us A Message:</b></h3>
+						<h3>jagat@everycrave.me</h3>
+						<br>
+					</div>
+					
+					<div class="col-lg-4 contact">	
+						<h3><b>Call Us:</b></h3>
+						<h3>08861445837</h3>
+						<br>
+					</div>
+					
+					<div class="col-lg-4 contact">
+						<h3><b>We Are Social</b></h3>
+						<p>
+							<a href="https://www.facebook.com/bjpinkarnataka" target="_blank"><i class="icon-facebook"></i></a>
+							<a href="https://twitter.com/bjpkarnataka" target="_blank"><i class="icon-twitter"></i></a>
+							
+							
+						</p>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /f -->
+	
+	<div id="c">
+		<div class="container">
+		
+		
+		</div>
+	</div>
+	
+{% endblock %}
+
+{% block js %}
+	  <script>
+$(document).ready(function(){
+$(".constituency").closest('.field_parent').hide(function(){
+	  $('#country').attr("checked", "checked");	
+});
+  $("#constituency,#country").click(function(){
+
+    $(".constituency").closest('.field_parent').toggle();
+	$(".country").closest('.field_parent').toggle();
+  });
+ 
+  
+
+});
+</script>
+{% endblock %}
